@@ -100,13 +100,22 @@ function graphFuel(id, state, w, h) {
     y.domain(d3.extent(
       [].concat(
           data.map (function (item) {
+        return (item.Residential);
+      }), data.map ( function (item) {
+        return (item.Commercial);
+      }), data.map ( function (item) {
+        return (item.Industry);
+      }), data.map ( function (item) {
+        return (item.Transport);
+      }), data.map ( function (item) {
+        return (item.Electricity);
+      }), data.map (function (item) {
         return (item.Oil);
       }), data.map ( function (item) {
         return (item.Coal);
       }), data.map ( function (item) {
         return (item.Gas);
       }))));
-      
 
     // Append x axis 
     svgLineChart.append("g")
@@ -177,7 +186,11 @@ function graphSector(id, state, w, h) {
 
   // y function map the variables along the y axis
   var y = d3.scaleLinear().range([height, 0]);
-  
+
+  var colors = d3.scaleOrdinal()
+                 .domain(['Residential', 'Commercial', 'Industry', 'Transport', 'Electricity'])
+                 .range(['#8c510a', '#d8b365', '#c7eae5', '#5ab4ac', '#01665e']);
+
   // Read in data 
   d3.csv('cleanData/co2emissions.csv', function(error, data) {  
     data.forEach(function(d) {
@@ -223,6 +236,7 @@ function graphSector(id, state, w, h) {
         .y(function(d) { return y(d.Electricity); });
 
     // Create SVG item 
+    // d3.select(id).selectAll('*').remove();
     var svgLineChart = d3.select(id)
                 .append('svg')
                 .attr('width', width + margin.left + margin.right)
@@ -244,6 +258,12 @@ function graphSector(id, state, w, h) {
         return (item.Transport);
       }), data.map ( function (item) {
         return (item.Electricity);
+      }), data.map (function (item) {
+        return (item.Oil);
+      }), data.map ( function (item) {
+        return (item.Coal);
+      }), data.map ( function (item) {
+        return (item.Gas);
       }))));
 
     // Append x axis 
@@ -308,7 +328,17 @@ function graphSector(id, state, w, h) {
         .attr("stroke", '#01665e')
         .attr("stroke-width", 2)
         .attr("d", lineElectricity);
-    
+
+    // var legend = svgLineChart.selectAll('.legend')
+    //                   .data(['Residential', 'Commercial', 'Industry', 'Transport', 'Electricity'])
+    //                   .enter().append('g')
+    //                   .attr('class', 'legend')
+    //                   .attr('transform', function(d, i) { return 'translate('+ i * 90 + ',370)'; });
+
+    //     legend.append('text')
+    //           .style('fill', colors)
+    //           .text(function(d) { return d; });
+
     // // text label for the x axis
     svgLineChart.append("text")
         .attr('x', width/2)
