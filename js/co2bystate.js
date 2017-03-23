@@ -4,7 +4,7 @@ var contentWidth = document.getElementById('content').clientWidth;
 
 var plotRow;
   if (contentWidth >= 500) {plotRow = 2.05;} 
-  else { plotRow = 2.05; }
+  else { plotRow = 1; }
 
 var xWidth = contentWidth / plotRow;
 var yHeight = contentWidth / plotRow;
@@ -25,7 +25,7 @@ function updateGraph() {
   var contentWidth = document.getElementById('content').clientWidth;
   var plotRow;
   if (contentWidth >= 500) {plotRow = 2.05;} 
-  else { plotRow = 2.05; }
+  else { plotRow = 1; }
 
   var xWidth = contentWidth / plotRow;
   var yHeight = contentWidth / plotRow;
