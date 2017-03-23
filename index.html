@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+  <head>
+    <title>State-level CO2 emissions by fuel and sector</title>
+    <meta property='og:title' content='State-level CO2 emissions by fuel and sector'/>
+    <meta property='og:type' content='website' />
+    <meta property='og:url' content='https://github.com/nikostsafos' />
+    <meta property="og:image" content="img/USemissionsCover.png" />
+    <meta name = 'viewport' content = 'width=device-width, initial-scale = 1.0'/>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+  </head>
+  
+  <body>
+  <nav></nav>
+
+  <div id = 'content'>
+ 
+    <hr><h2>State-level CO<sub>2</sub> emissions by fuel and sector</h2><hr>
+    
+        <div class = 'menu' align = 'center'>
+        <select id="stateSelect" name="stateSelect">
+			<option value="Alabama">Alabama</option>
+			<option value="Alaska">Alaska</option>
+			<option value="Arizona">Arizona</option>
+			<option value="Arkansas">Arkansas</option>
+			<option value="California">California</option>
+			<option value="Colorado">Colorado</option>
+			<option value="Connecticut">Connecticut</option>
+			<option value="Delaware">Delaware</option>
+			<option value="District of Columbia">District of Columbia</option>
+			<option value="Florida">Florida</option>
+			<option value="Georgia">Georgia</option>
+			<option value="Hawaii">Hawaii</option>
+			<option value="Idaho">Idaho</option>
+			<option value="Illinois">Illinois</option>
+			<option value="Indiana">Indiana</option>
+			<option value="Iowa">Iowa</option>
+			<option value="Kansas">Kansas</option>
+			<option value="Kentucky">Kentucky</option>
+			<option value="Louisiana">Louisiana</option>
+			<option value="Maine">Maine</option>
+			<option value="Maryland">Maryland</option>
+			<option value="Massachusetts">Massachusetts</option>
+			<option value="Michigan">Michigan</option>
+			<option value="Minnesota">Minnesota</option>
+			<option value="Mississippi">Mississippi</option>
+			<option value="Missouri">Missouri</option>
+			<option value="Montana">Montana</option>
+			<option value="Nebraska">Nebraska</option>
+			<option value="Nevada">Nevada</option>
+			<option value="New Hampshire">New Hampshire</option>
+			<option value="New Jersey">New Jersey</option>
+			<option value="New Mexico">New Mexico</option>
+			<option value="New York">New York</option>
+			<option value="North Carolina">North Carolina</option>
+			<option value="North Dakota">North Dakota</option>
+			<option value="Ohio">Ohio</option>
+			<option value="Oklahoma">Oklahoma</option>
+			<option value="Oregon">Oregon</option>
+			<option value="Pennsylvania">Pennsylvania</option>
+			<option value="Rhode Island">Rhode Island</option>
+			<option value="South Carolina">South Carolina</option>
+			<option value="South Dakota">South Dakota</option>
+			<option value="Tennessee">Tennessee</option>
+			<option value="Texas">Texas</option>
+			<option value="Utah">Utah</option>
+			<option value="Vermont">Vermont</option>
+			<option value="Virginia">Virginia</option>
+			<option value="Washington">Washington</option>
+			<option value="West Virginia">West Virginia</option>
+			<option value="Wisconsin">Wisconsin</option>
+			<option value="Wyoming">Wyoming</option>
+            </select>
+            </div>
+
+        <div class = 'graphic' id = 'graphic'>
+            <script src='js/co2bystate.js'></script>
+        </div>
+        <table style="width:100%">
+        	<tr align = 'center'>
+    		<td><ul><li style='color: #2ca25f'>Oil</li>
+                	<li style='color: #636363'>Coal</li>
+                	<li style='color: #d73027'>Gas</li></ul></td>
+            <td><ul><li style='color: #8c510a'>Residential</li>
+                	<li style='color: #d8b365'>Commercial</li>
+                	<li style='color: #c7eae5'>Industry</li>
+                	<li style='color: #5ab4ac'>Transport</li>
+                	<li style='color: #01665e'>Electricity</li></ul></td>
+            </tr>
+        </table>
+    <p class = 'graphFootnote'>Based on data from Energy Information Administration, <a href = 'https://www.eia.gov/environment/emissions/state/' target = '_blank'>State Carbon Dioxide Emissions</a>, Release Date: November 3, 2016.</p>
+    <p class = 'graphFootnote'>Color scheme from <a href = 'http://colorbrewer2.org/' target="_blank">http://colorbrewer2.org/</a>. For more information, please visit the full github repository: <a href='https://github.com/nikostsafos' target = '_blank'>https://github.com/nikostsafos.</a></p>
+    <p class = 'graphFootnote'><a href="https://twitter.com/ntsafos" class="twitter-follow-button" data-show-count="false">Follow @ntsafos</a></p>
+    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></h4>
+	</div>
+  </body>
+
