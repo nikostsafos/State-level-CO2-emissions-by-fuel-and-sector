@@ -329,16 +329,6 @@ function graphSector(id, state, w, h) {
         .attr("stroke-width", 2)
         .attr("d", lineElectricity);
 
-    // var legend = svgLineChart.selectAll('.legend')
-    //                   .data(['Residential', 'Commercial', 'Industry', 'Transport', 'Electricity'])
-    //                   .enter().append('g')
-    //                   .attr('class', 'legend')
-    //                   .attr('transform', function(d, i) { return 'translate('+ i * 90 + ',370)'; });
-
-    //     legend.append('text')
-    //           .style('fill', colors)
-    //           .text(function(d) { return d; });
-
     // // text label for the x axis
     svgLineChart.append("text")
         .attr('x', width/2)
